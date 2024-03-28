@@ -14,7 +14,7 @@ read test.txt
 echo $test.txt
 
 # Change Permissions
-chmod 755
+chmod 777
 
 # See changes
 ls -al
