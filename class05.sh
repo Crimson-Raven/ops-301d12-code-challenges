@@ -3,14 +3,11 @@
 # Script: Ops 301 Challenge 05
 # Author: Rebecca Childs
 # Date of last revision: 04/05/2024
-# Purpose: Compress and clear contents of log file.
+# Purpose: Compress and clear contents of a log file.
 
 # Copy a log file from /var/log to our directory
 #cp var/log/syslog ./syslog-test05
 
-# Print the file size of log files before compressing them.
-
-# Compress the content of the log files
 # var/log/syslog
 # var/log/wtmp
 BACKUPS="backup"
@@ -18,7 +15,8 @@ LOG_FILES=("/var/log/syslog" "/var/log/wtmp")
 
 # Generate timestamp in format - YYYYMMDDHHMMSS
 TIMESTAMP=$(date +"%Y%m%d%H%M%S")
-#echo $TIMESTAMP
+
+# Make backup directory
 mkdir -p "$BACKUPS"
 
 for file in "${LOG_FILES[@]}"; do
@@ -34,16 +32,28 @@ for file in "${LOG_FILES[@]}"; do
         echo "Compression successful: Compressed file is smaller than original file size."
     else
         echo "Compression unsuccessful: Compressed file is larger than original file size."
-#cat /dev/null > "$file"
         fi
         done
 
-# Variable that calls backup directory
+
+# Explanation:
+
+# Generate timestamp in format - YYYYMMDDHHMMSS
+# TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+
+# Variable that calls backup directory:
 #BACKUP_DIR="backups"
 #LOG_FILES=(syslog-test)
 
-# Clear contents of log file
+# Clear contents of log file:
+# cat /dev/null > "$file"
 
-# Print to the screen the file size of compressed file
+# Print to the screen the file size of compressed file:
+#    echo "File size before compression: $FILE_SIZE"
+#    echo "File size after compression: $COMPRESS_FILE_SIZE"
 
-# Compare size of the compressed file to the size of the original file. 
+# Compare size of the compressed file to the size of the original file:
+# if [[ $FILE_SIZE > $COMPRESS_FILE_SIZE ]]; then
+#        echo "Compression successful: Compressed file is smaller than original file size."
+#    else
+#        echo "Compression unsuccessful: Compressed file is larger than original file size."
