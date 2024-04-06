@@ -2,8 +2,12 @@
 
 # Script: Ops 301 Challenge 04
 # Author: Rebecca Childs
-# Date of last revision: 03/28/2024
-# Purpose: 
+# Date of last revision: 04/05/2024
+# Purpose: Create a bash script that launches a menu system with the following options:
+# Hello world (prints “Hello world!” to the screen)
+# Ping self (pings this computer’s loopback address)
+# IP info (print the network adapter information for this computer)
+# Exit
 
 # Main Loop
 while true; do
