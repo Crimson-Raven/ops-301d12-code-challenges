@@ -6,15 +6,16 @@
 # Purpose: Change file permissions
 
 # Show file permissions for test file
-ls -al
+# ls -al
 # Ask user for file name
 echo "Please provide a file to change it's permissions"
-read test.txt
+read -r input
 
-echo $test.txt
+# echo $text.txt
 
 # Change Permissions
-chmod 777
+chmod -R 777 "$input"
+cd "$input"
 
-# See changes
-ls -al
+# Print contents of folder and changed permissions
+ls -l 
